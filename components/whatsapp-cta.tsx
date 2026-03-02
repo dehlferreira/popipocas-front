@@ -2,10 +2,10 @@
 
 import { MessageCircle } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import { siteConfig } from '@/config/site'
 
 export default function WhatsappCTA() {
-  const whatsappNumber = '5585987654321' // Substitua pelo seu número
-  const whatsappMessage = 'Olá! Gostaria de fazer um pedido das pipocas Popipokas!'
+  const { number: whatsappNumber, defaultMessage: whatsappMessage } = siteConfig.contact.whatsapp
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`
 
   return (
@@ -34,7 +34,7 @@ export default function WhatsappCTA() {
         </a>
 
         <p className="text-white/70 mt-8 text-sm">
-          Atendimento disponível de segunda a sábado, das 9h às 20h
+          Atendimento disponível de segunda a sábado, {siteConfig.hours.weekdays}
         </p>
       </div>
     </section>

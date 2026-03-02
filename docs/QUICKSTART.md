@@ -21,16 +21,15 @@ Acesse: http://localhost:3000
 
 ### 🔴 URGENTE: Atualizar Número do WhatsApp
 
-**Arquivo 1:** `/components/header.tsx`
+**Arquivo único:** `/config/site.ts`
 ```typescript
-// Linha 7 - MUDE ISSO PARA SEU NÚMERO
-const whatsappNumber = '5585987654321'
-```
-
-**Arquivo 2:** `/components/whatsapp-cta.tsx`
-```typescript
-// Linha 12 - MUDE ISSO PARA SEU NÚMERO
-const whatsappNumber = '5585987654321'
+contact: {
+  whatsapp: {
+    number: '5585987654321',  // ← MUDE PARA SEU NÚMERO
+    defaultMessage: 'Olá! Gostaria de fazer um pedido das pipocas Popipokas!',
+  },
+  // ...
+}
 ```
 
 **Formato correto:** `55` + DDD + Número (sem parênteses, sem hífens, sem espaços)
@@ -142,22 +141,13 @@ vercel
 
 ## 📞 Informações de Contato
 
-Edite em dois locais:
-
-**1. `/components/footer.tsx`**
-- Número de telefone
-- Email
-- Endereço
-- Links de redes sociais
-
-**2. `/config/site.ts`**
-- Todas as informações centralizadas
+Edite **apenas** `/config/site.ts` – todas as informações (WhatsApp, telefone, email, endereço, redes sociais, SEO) são centralizadas e usadas automaticamente em header, footer e demais componentes.
 
 ---
 
 ## ✅ Checklist de Deploy
 
-- [ ] Número do WhatsApp atualizado
+- [ ] Número do WhatsApp atualizado em `config/site.ts`
 - [ ] Logo salva em `/public/popipokas-logo.png`
 - [ ] Produtos adicionados corretamente
 - [ ] Imagens otimizadas (não maiores que 1MB)

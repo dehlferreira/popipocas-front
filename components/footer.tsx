@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import { Facebook, Instagram, MapPin, Phone, Mail } from 'lucide-react'
+import { siteConfig, navigationLinks } from '@/config/site'
 
 export default function Footer() {
   return (
@@ -17,12 +18,12 @@ export default function Footer() {
                 className="rounded-lg"
               />
               <div>
-                <h3 className="font-playfair text-xl font-bold">Popipokas</h3>
-                <p className="text-sm text-white/70">Gourmet Premium</p>
+                <h3 className="font-playfair text-xl font-bold">{siteConfig.brand.name}</h3>
+                <p className="text-sm text-white/70">{siteConfig.brand.tagline}</p>
               </div>
             </div>
             <p className="text-sm text-white/70 leading-relaxed">
-              As melhores pipocas gourmet para você e sua família. Qualidade premium em cada pipoca.
+              {siteConfig.brand.description}
             </p>
           </div>
 
@@ -30,10 +31,11 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold text-lg mb-4">Navegação</h4>
             <ul className="space-y-2 text-sm text-white/70">
-              <li><a href="#produtos" className="hover:text-white transition">Sabores</a></li>
-              <li><a href="#depoimentos" className="hover:text-white transition">Depoimentos</a></li>
-              <li><a href="#contato" className="hover:text-white transition">Contato</a></li>
-              <li><a href="#sobre" className="hover:text-white transition">Sobre Nós</a></li>
+              {navigationLinks.map((link) => (
+                <li key={link.href}>
+                  <a href={link.href} className="hover:text-white transition">{link.label}</a>
+                </li>
+              ))}
             </ul>
           </div>
 
@@ -43,15 +45,15 @@ export default function Footer() {
             <ul className="space-y-3 text-sm text-white/70">
               <li className="flex items-center gap-2">
                 <Phone size={16} className="text-primary" />
-                <span>(85) 98765-4321</span>
+                <span>{siteConfig.contact.phone}</span>
               </li>
               <li className="flex items-center gap-2">
                 <Mail size={16} className="text-primary" />
-                <span>contato@popipokas.com</span>
+                <span>{siteConfig.contact.email}</span>
               </li>
               <li className="flex items-start gap-2">
                 <MapPin size={16} className="text-primary mt-1 flex-shrink-0" />
-                <span>Santo André, SP</span>
+                <span>{siteConfig.contact.address}</span>
               </li>
             </ul>
           </div>
@@ -61,7 +63,7 @@ export default function Footer() {
             <h4 className="font-semibold text-lg mb-4">Redes Sociais</h4>
             <div className="flex gap-4">
               <a
-                href="https://instagram.com/popipokas"
+                href={siteConfig.social.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-primary/20 hover:bg-primary/40 p-3 rounded-lg transition"
@@ -69,7 +71,7 @@ export default function Footer() {
                 <Instagram size={20} />
               </a>
               <a
-                href="https://facebook.com/popipokas"
+                href={siteConfig.social.facebook}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-primary/20 hover:bg-primary/40 p-3 rounded-lg transition"

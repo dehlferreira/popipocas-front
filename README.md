@@ -50,10 +50,15 @@ Abra [http://localhost:3000](http://localhost:3000) para visualizar.
 
 #### Atualizar Número do WhatsApp
 
-Edite o arquivo `/components/whatsapp-cta.tsx` e `/components/header.tsx`:
+Edite o arquivo `/config/site.ts` (configuração centralizada):
 
 ```tsx
-const whatsappNumber = "5585987654321"; // Substitua pelo seu número
+contact: {
+  whatsapp: {
+    number: "5585987654321", // Substitua pelo seu número
+    defaultMessage: "Olá! Gostaria de fazer um pedido das pipocas Popipokas!",
+  },
+}
 ```
 
 #### Adicionar/Editar Produtos
@@ -102,7 +107,9 @@ popipokas/
 │   ├── testimonials.tsx     # Seção de depoimentos
 │   ├── whatsapp-cta.tsx     # Call-to-action WhatsApp
 │   ├── footer.tsx           # Rodapé
-│   └── ui/                  # Componentes shadcn/ui
+│   └── ui/                  # Componentes shadcn/ui (button, card)
+├── config/
+│   └── site.ts              # Configurações centralizadas (WhatsApp, contato, SEO)
 ├── public/
 │   ├── hero-banner.jpg      # Imagem do hero
 │   ├── popipokas-logo.png   # Logo da marca

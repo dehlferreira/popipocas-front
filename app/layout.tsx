@@ -1,31 +1,18 @@
 import type { Metadata } from 'next'
 import { Playfair_Display, Poppins } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
+import { siteConfig } from '@/config/site'
 import './globals.css'
 
 const playfair = Playfair_Display({ subsets: ["latin"], variable: '--font-playfair' })
 const poppins = Poppins({ subsets: ["latin"], weight: ["400", "500", "600", "700"], variable: '--font-poppins' })
 
 export const metadata: Metadata = {
-  title: 'Popipokas - Pipocas Gourmet Premium',
-  description: 'Descubra as melhores pipocas gourmet com sabores únicos e deliciosos. Popipokas - Pipocas de Qualidade',
-  generator: 'v0.app',
+  title: siteConfig.seo.title,
+  description: siteConfig.seo.description,
+  keywords: siteConfig.seo.keywords,
   icons: {
-    icon: [
-      {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
-      },
-    ],
-    apple: '/apple-icon.png',
+    icon: '/icon.svg',
   },
 }
 

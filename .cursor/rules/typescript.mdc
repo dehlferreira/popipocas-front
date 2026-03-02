@@ -1,0 +1,36 @@
+---
+description: Padrões TypeScript e qualidade de código
+globs: **/*.ts
+alwaysApply: false
+---
+
+# Padrões TypeScript
+
+## Tipagem
+
+- Evitar `any`; usar `unknown` quando o tipo é desconhecido
+- Definir interfaces para props de componentes
+- Usar tipos explícitos em funções públicas
+
+## Tratamento de erros
+
+```typescript
+// ❌ EVITAR
+try {
+  await fetchData();
+} catch (e) {}
+
+// ✅ PREFERIR
+try {
+  await fetchData();
+} catch (e) {
+  console.error('Falha ao buscar dados', e);
+  throw e; // ou tratar adequadamente
+}
+```
+
+## Convenções
+
+- Preferir `const` sobre `let`
+- Nomes em camelCase (variáveis, funções)
+- Nomes em PascalCase (componentes, tipos, interfaces)

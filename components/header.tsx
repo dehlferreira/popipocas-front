@@ -1,10 +1,10 @@
 import Image from 'next/image'
 import { Button } from '@/components/ui/button'
 import { MessageCircle } from 'lucide-react'
+import { siteConfig, navigationLinks } from '@/config/site'
 
 export default function Header() {
-  const whatsappNumber = '5585987654321'
-  const whatsappMessage = 'Olá! Gostaria de fazer um pedido das pipocas Popipokas!'
+  const { number: whatsappNumber, defaultMessage: whatsappMessage } = siteConfig.contact.whatsapp
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`
 
   return (
@@ -23,24 +23,15 @@ export default function Header() {
 
         {/* Navigation Links */}
         <nav className="hidden md:flex items-center gap-8">
-          <a
-            href="#sabores"
-            className="text-white hover:text-primary transition font-medium text-sm"
-          >
-            Sabores
-          </a>
-          <a
-            href="#depoimentos"
-            className="text-white hover:text-primary transition font-medium text-sm"
-          >
-            Depoimentos
-          </a>
-          <a
-            href="#sobre"
-            className="text-white hover:text-primary transition font-medium text-sm"
-          >
-            Sobre
-          </a>
+          {navigationLinks.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              className="text-white hover:text-primary transition font-medium text-sm"
+            >
+              {link.label}
+            </a>
+          ))}
         </nav>
 
         {/* CTA Button */}

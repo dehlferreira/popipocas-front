@@ -1,0 +1,26 @@
+---
+description: Padrões React e Next.js para componentes
+globs: **/*.tsx
+alwaysApply: false
+---
+
+# Padrões React e Next.js
+
+## Componentes
+
+- Usar **functional components** (não classes)
+- Preferir named exports para componentes
+- Extrair lógica reutilizável em custom hooks (`hooks/`)
+- Manter componentes pequenos e focados
+
+## Next.js App Router
+
+- Páginas em `app/` com `page.tsx`
+- Layout raiz em `app/layout.tsx`
+- Usar `'use client'` apenas quando necessário (interatividade, hooks)
+
+## Boas práticas
+
+- Preferir Server Components quando possível
+- Colocar Client Components o mais baixo na árvore possível
+- Usar `<Image>` do Next.js para imagens

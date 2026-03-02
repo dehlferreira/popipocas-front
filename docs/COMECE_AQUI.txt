@@ -50,14 +50,16 @@
    ➜ Abra: http://localhost:3000
 
 2️⃣  ATUALIZE O WHATSAPP (URGENTE!)
-   📁 Arquivo: components/header.tsx
-   📁 Arquivo: components/whatsapp-cta.tsx
+   📁 Arquivo: config/site.ts
    
-   Mude: const whatsappNumber = '5585987654321'
-   Para: const whatsappNumber = 'SEU_NUMERO_AQUI'
+   Mude: number: '5585987654321'
+   Para: number: 'SEU_NUMERO_AQUI'
+   
+   Todas as informações (WhatsApp, contato, redes sociais) 
+   estão centralizadas em config/site.ts
 
 3️⃣  PERSONALIZE SEUS DADOS
-   📁 components/footer.tsx      (contato)
+   📁 config/site.ts             (contato, redes sociais)
    📁 components/testimonials.tsx (depoimentos)
    📁 components/products-carousel.tsx (produtos)
 
@@ -175,8 +177,8 @@ Documentação:
    → Edite as variáveis CSS em :root
 
 ❓ Como atualizar contato?
-   → Abra: components/footer.tsx
-   → Altere email, telefone, endereço
+   → Abra: config/site.ts
+   → Altere email, telefone, endereço em contact
 
 ❓ Como fazer deploy?
    → Vercel (recomendado): vercel.com
@@ -224,7 +226,7 @@ Google Fonts        Typography
 
 [ ] Instalou pnpm install
 [ ] Rodou pnpm dev sem erros
-[ ] Atualizou WhatsApp em 2 arquivos
+[ ] Atualizou WhatsApp em config/site.ts
 [ ] Testou WhatsApp link no celular
 [ ] Adicionou produtos reais
 [ ] Adicionou depoimentos reais

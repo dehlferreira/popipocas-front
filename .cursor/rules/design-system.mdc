@@ -1,0 +1,35 @@
+---
+description: Design system Popipokas - cores, tipografia e componentes
+globs: app/**/*.tsx, components/**/*.tsx, **/*.css
+alwaysApply: false
+---
+
+# Design System Popipokas
+
+## Cores (CSS variables)
+
+Usar sempre as variáveis CSS, nunca hex direto em componentes:
+
+- **Primária**: `--primary` (#d9444a - vermelho coral)
+- **Secundária**: `--secondary` (#d4a574 - dourado)
+- **Texto**: `--foreground` / `--muted-foreground`
+- **Fundo**: `--background`
+
+```tsx
+// ✅ BOM - usa classes Tailwind que mapeiam as variáveis
+className="bg-primary text-primary-foreground"
+
+// ❌ EVITAR - cor hardcoded
+className="bg-[#d9444a]"
+```
+
+## Tipografia
+
+- **Títulos**: `font-playfair` (Playfair Display)
+- **Corpo**: `font-poppins` ou padrão (Poppins)
+
+## Componentes shadcn/ui
+
+- Reutilizar componentes de `components/ui/`
+- Usar `cn()` de `lib/utils` para merge de classes
+- Manter consistência visual com o tema Popipokas
