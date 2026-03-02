@@ -14,18 +14,21 @@ Uma landing page moderna e responsiva para a marca **Popipokas**, especializada 
 ## 🎨 Design System
 
 ### Cores
+
 - **Primária**: #d9444a (Vermelho Coral)
 - **Secundária**: #d4a574 (Dourado)
 - **Fundo**: #ffffff (Branco)
 - **Texto**: #1a1a1a (Quase preto)
 
 ### Tipografia
+
 - **Títulos**: Playfair Display (serif elegante)
 - **Corpo**: Poppins (sans-serif moderna)
 
 ## 🚀 Como Usar
 
 ### 1. **Instalação**
+
 ```bash
 # Clone ou baixe o projeto
 cd popipokas
@@ -35,6 +38,7 @@ pnpm install
 ```
 
 ### 2. **Desenvolvimento**
+
 ```bash
 # Inicie o servidor de desenvolvimento
 pnpm dev
@@ -45,13 +49,17 @@ Abra [http://localhost:3000](http://localhost:3000) para visualizar.
 ### 3. **Customização**
 
 #### Atualizar Número do WhatsApp
+
 Edite o arquivo `/components/whatsapp-cta.tsx` e `/components/header.tsx`:
+
 ```tsx
-const whatsappNumber = '5585987654321' // Substitua pelo seu número
+const whatsappNumber = "5585987654321"; // Substitua pelo seu número
 ```
 
 #### Adicionar/Editar Produtos
+
 Edite `/components/products-carousel.tsx` na seção `products`:
+
 ```tsx
 {
   id: '6',
@@ -65,7 +73,9 @@ Edite `/components/products-carousel.tsx` na seção `products`:
 ```
 
 #### Adicionar/Editar Depoimentos
+
 Edite `/components/testimonials.tsx` na seção `testimonials`:
+
 ```tsx
 {
   id: '5',
@@ -120,11 +130,13 @@ popipokas/
 ## 🚀 Deploy
 
 ### Vercel (Recomendado)
+
 1. Conecte seu repositório GitHub
 2. Clique em "Deploy"
 3. Configure as variáveis de ambiente se necessário
 
 ### Outros Hosts
+
 ```bash
 # Build para produção
 pnpm build
@@ -147,4 +159,4 @@ Para dúvidas sobre este projeto ou a marca Popipokas, entre em contato via What
 
 ---
 
-**Desenvolvido com ❤️ por v0**
+**Desenvolvido com ❤️ por andrelf.dev**
